@@ -1,0 +1,27 @@
+{
+  "name": "fbpages",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "server": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/acaua/fbpages.git"
+  },
+  "author": "Acauã Sperl de Faria",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/acaua/fbpages/issues"
+  },
+  "homepage": "https://github.com/acaua/fbpages#readme",
+  "dependencies": {
+    "express": "^4.16.4"
+  },
+  "devDependencies": {
+    "concurrently": "^4.1.0",
+    "nodemon": "^1.18.6"
+  }
+}
