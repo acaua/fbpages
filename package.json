@@ -18,7 +18,8 @@
   },
   "homepage": "https://github.com/acaua/fbpages#readme",
   "dependencies": {
-    "express": "^4.16.4"
+    "express": "^4.16.4",
+    "fb": "^2.0.0"
   },
   "devDependencies": {
     "concurrently": "^4.1.0",
