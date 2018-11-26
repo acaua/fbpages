@@ -10,7 +10,7 @@
     "dev": "concurrently \"npm run server\" \"npm run client\"",
     "client-build": "npm run build --prefix client",
     "client-install": "npm install --prefix client",
-    "deploy": "now --public"
+    "deploy": "npm run client-build && now --public"
   },
   "repository": {
     "type": "git",
