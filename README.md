@@ -6,6 +6,9 @@ App to list the Facebook pages a person manages
 
 **Front-end** using **React**, and **Materialize**
 
+This app could be implemented without a back-end, making the calls to Facebook Graph API straight from the React client.
+It is done using an Express back-end as a playground for implementing a full stack app with Facebook Graph API calls on the backend.
+
 # Downloading and running instructions
 
 ## Pre-requisites
