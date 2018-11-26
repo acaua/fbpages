@@ -8,7 +8,7 @@ const Login = ({ onLogin }) => {
       <br />
       <div className="center">
         <FacebookLogin
-          appId="1924609344297152"
+          appId="932591810270832"
           autoLoad={true}
           fields="name"
           scope="public_profile,pages_show_list"
