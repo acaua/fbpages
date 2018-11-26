@@ -1,14 +1,19 @@
 import React from "react";
 import moment from "moment";
 
-const Post = ({ text, createdTime }) => {
+const Post = ({ post }) => {
+  if (!post.message && !post.story) return null;
+
+  const text = post.message || post.story;
+  const createdTime = post.create_time;
+
   return (
     <div className="card">
       <div className="card-content">
         <p>{text}</p>
       </div>
       <div className="card-action">
-        <p>Created time: {moment(createdTime).calendar()}</p>
+        <p className="right-align">{moment(createdTime).calendar()}</p>
       </div>
     </div>
   );

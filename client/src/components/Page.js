@@ -36,16 +36,9 @@ class Page extends Component {
           </div>
 
           <h4>Page feed</h4>
-          {feed
-            .filter(post => post.message || post.story)
-            .map(post => ({ ...post, text: post.message || post.story }))
-            .map(post => (
-              <Post
-                key={post.id}
-                text={post.text}
-                createdTime={post.created_time}
-              />
-            ))}
+          {feed.map(post => (
+            <Post key={post.id} post={post} />
+          ))}
         </div>
       );
 
