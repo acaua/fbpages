@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import axios from "axios";
 
+import Post from "./Post";
+
 class Page extends Component {
   state = { page: null, feed: [] };
 
@@ -38,15 +40,11 @@ class Page extends Component {
             .filter(post => post.message || post.story)
             .map(post => ({ ...post, text: post.message || post.story }))
             .map(post => (
-              <div key={post.id} className="card">
-                <div className="card-content">
-                  <p>{post.text}</p>
-                </div>
-                <div className="card-action">
-                  {/* <div>{moment(post.created_time).calendar()}</div> */}
-                  <p>Created time: {post.created_time}</p>
-                </div>
-              </div>
+              <Post
+                key={post.id}
+                text={post.text}
+                createdTime={post.created_time}
+              />
             ))}
         </div>
       );
