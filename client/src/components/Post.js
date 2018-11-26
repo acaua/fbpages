@@ -6,6 +6,7 @@ const Post = ({ post }) => {
 
   const text = post.message || post.story;
   const createdTime = post.create_time;
+  const permalink = post.permalink_url;
 
   return (
     <div className="card">
@@ -13,7 +14,9 @@ const Post = ({ post }) => {
         <p>{text}</p>
       </div>
       <div className="card-action">
-        <p className="right-align">{moment(createdTime).calendar()}</p>
+        <p className="right-align">
+          <a href={permalink}>{moment(createdTime).calendar()}</a>
+        </p>
       </div>
     </div>
   );

@@ -22,7 +22,8 @@ router.get("/:id/feed", (req, res) => {
   FB.api(
     `/${req.params.id}/feed`,
     {
-      access_token: req.query.access_token
+      access_token: req.query.access_token,
+      fields: "message,story,permalink_url,created_time"
     },
     fb_response => {
       if (!fb_response || fb_response.error) return res.sendStatus(500);
