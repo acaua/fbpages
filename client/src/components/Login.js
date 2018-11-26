@@ -4,6 +4,8 @@ import FacebookLogin from "react-facebook-login";
 const Login = ({ onLogin }) => {
   return (
     <div className="container">
+      <br />
+      <br />
       <div className="center">
         <FacebookLogin
           appId="1924609344297152"

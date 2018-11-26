@@ -9,6 +9,16 @@ import Pages from "./components/Pages";
 class App extends Component {
   state = { accessToken: "", name: "", isLoggedIn: false };
 
+  onLogin = res => {
+    const { accessToken, name } = res;
+    this.setState({ accessToken, name, isLoggedIn: true });
+  };
+
+  logout = () => {
+    this.setState({ accessToken: "", name: "", isLoggedIn: false });
+    window.FB.logout();
+  };
+
   render() {
     const { isLoggedIn, accessToken } = this.state;
 
@@ -37,16 +47,6 @@ class App extends Component {
       </BrowserRouter>
     );
   }
-
-  onLogin = res => {
-    const { accessToken, name } = res;
-    this.setState({ accessToken, name, isLoggedIn: true });
-  };
-
-  logout = () => {
-    this.setState({ accessToken: "", name: "", isLoggedIn: false });
-    window.FB.logout();
-  };
 }
 
 export default App;

@@ -16,6 +16,7 @@ class Pages extends Component {
 
     return (
       <div className="container fb-pages">
+        <br />
         {pages.map(({ id, name, category }) => (
           <Link to={`/page/${id}`} key={id}>
             <div className="card hoverable">

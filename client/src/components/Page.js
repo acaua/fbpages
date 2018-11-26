@@ -17,10 +17,14 @@ class Page extends Component {
     if (page)
       return (
         <div className="container fb-page">
-          <p>Name: {page.name}</p>
-          <p>Category: {page.category}</p>
-          <p>About: {page.about}</p>
-          <p>Fan count: {page.fan_count}</p>
+          <div className="card z-depth-0">
+            <div className="card-content">
+              <span className="card-title">{page.name}</span>
+              <p>Category: {page.category}</p>
+              <p>About: {page.about}</p>
+              <p>Fan count: {page.fan_count}</p>
+            </div>
+          </div>
         </div>
       );
 
