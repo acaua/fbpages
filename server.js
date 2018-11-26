@@ -1,10 +1,13 @@
 const express = require("express");
 const path = require("path");
 
+const page = require("./routes/page");
 const pages = require("./routes/pages");
 
 const app = express();
-app.use("/api/", pages);
+
+app.use("/api/page", page);
+app.use("/api/pages", pages);
 
 app.use(express.static(path.join(__dirname, "client/build")));
 app.get("*", (req, res) => {
