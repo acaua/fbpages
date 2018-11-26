@@ -1,16 +1,52 @@
 import React, { Component } from "react";
-import { BrowserRouter } from "react-router-dom";
+import { BrowserRouter, Route } from "react-router-dom";
+
+import Navbar from "./components/Navbar";
+import Login from "./components/Login";
+import Page from "./components/Page";
+import Pages from "./components/Pages";
 
 class App extends Component {
+  state = { accessToken: "", name: "", isLoggedIn: false };
+
   render() {
+    const { isLoggedIn, accessToken } = this.state;
+
     return (
       <BrowserRouter>
         <div className="App">
-          <h1>Hello React</h1>
+          <Navbar logout={this.logout} isLoggedIn={isLoggedIn} />
+          {isLoggedIn ? (
+            <>
+              <Route
+                exact
+                path="/"
+                render={() => <Pages accessToken={accessToken} />}
+              />
+              <Route
+                path="/page/:id"
+                render={props => (
+                  <Page accessToken={accessToken} id={props.match.params.id} />
+                )}
+              />
+            </>
+          ) : (
+            <Login onLogin={this.onLogin} />
+          )}
         </div>
       </BrowserRouter>
     );
   }
+
+  onLogin = res => {
+    const { accessToken, name } = res;
+    this.setState({ accessToken, name, isLoggedIn: true });
+  };
+
+  logout = () => {
+    this.setState({ accessToken: "", name: "", isLoggedIn: false });
+    window.FB.logout();
+  };
 }
 
 export default App;
