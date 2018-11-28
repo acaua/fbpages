@@ -5,7 +5,7 @@ const Post = ({ post }) => {
   if (!post.message && !post.story) return null;
 
   const text = post.message || post.story;
-  const createdTime = post.create_time;
+  const createdTime = post.created_time;
   const permalink = post.permalink_url;
   const picture = post.full_picture;
   const shares = post.shares ? post.shares.count : 0;
